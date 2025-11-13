@@ -20,6 +20,7 @@ interface ContactPageProps {
 
 export default function ContactPage({ currentLang, onBack }: ContactPageProps) {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [selectedDepartment, setSelectedDepartment] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -215,7 +216,10 @@ export default function ContactPage({ currentLang, onBack }: ContactPageProps) {
                 <Label htmlFor="department" className={currentLang === "am" ? "amharic" : ""}>
                   {currentLang === "en" ? "Subject" : "ርዕሰ ጉዳይ"}
                 </Label>
-                <Select>
+                <Select 
+                  value={selectedDepartment} 
+                  onValueChange={setSelectedDepartment}
+                >
                   <SelectTrigger id="department">
                     <SelectValue
                       placeholder={currentLang === "en" ? "Select a subject..." : "ርዕሰ ጉዳይ ይምረጡ..."}
