@@ -158,11 +158,6 @@ For hospital-related inquiries, please use the contact form on the live website.
 - **Next.js Team** - For the amazing framework
 - **Vercel** - For seamless deployment experience
 - **Ethiopian Community** - For cultural inspiration
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 <div align="center">
