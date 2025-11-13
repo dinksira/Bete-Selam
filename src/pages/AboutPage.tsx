@@ -7,7 +7,8 @@ interface AboutPageProps {
   onBack: () => void;
 }
 
-export function AboutPage({ currentLang, onBack }: AboutPageProps) {
+// ONLY CHANGE: Changed from named export to default export
+export default function AboutPage({ currentLang, onBack }: AboutPageProps) {
   const milestones = [
     {
       year: "2010",
@@ -132,7 +133,7 @@ export function AboutPage({ currentLang, onBack }: AboutPageProps) {
     {
       name: "Ato Solomon Bekele",
       title: currentLang === "en" ? "CEO & Administrator" : "ዋና ሥራ አስፈፃሚ እና አስተዳዳሪ",
-      image: "https://images.unsplash.com/photo-1762603677582-7b809b5490d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob3NwaXRhbCUyMG1lZGljYWx8ZW58MXx8fHwxNzYyOTYzNTQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      image: "https://images.unsplash.com/photo-1762603677582-7b809b5490d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJchaHwxfHxtb2Rlcm4lMjBob3NwaXRhbCUyMG1lZGljYWx8ZW58MXx8fHwxNzYyOTYzNTQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       credentials: "MBA, MHA",
     },
   ];
