@@ -19,7 +19,7 @@ interface FindDoctorPageProps {
   onBack: () => void;
 }
 
-export function FindDoctorPage({ currentLang, onBack }: FindDoctorPageProps) {
+export default function FindDoctorPage({ currentLang, onBack }: FindDoctorPageProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialty, setSelectedSpecialty] = useState("all");
   const [selectedLanguage, setSelectedLanguage] = useState("all");

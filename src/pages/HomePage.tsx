@@ -26,7 +26,7 @@ interface HomePageProps {
   onBookAppointment: () => void;
 }
 
-export function HomePage({ currentLang, onFindDoctor, onBookAppointment }: HomePageProps) {
+export default function HomePage({ currentLang, onFindDoctor, onBookAppointment }: HomePageProps) {
   const services = [
     {
       icon: Ambulance,

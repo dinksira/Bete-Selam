@@ -8,7 +8,7 @@ interface EmergencyPageProps {
   onBack: () => void;
 }
 
-export function EmergencyPage({ currentLang, onBack }: EmergencyPageProps) {
+export default function EmergencyPage({ currentLang, onBack }: EmergencyPageProps) {
   const emergencyNumber = "907";
   const hospitalNumber = "+251 11 123 4567";
 

@@ -19,7 +19,7 @@ interface BookAppointmentPageProps {
   onBack: () => void;
 }
 
-export function BookAppointmentPage({ currentLang, onBack }: BookAppointmentPageProps) {
+export default function BookAppointmentPage({ currentLang, onBack }: BookAppointmentPageProps) {
   const [step, setStep] = useState(1);
   const [appointmentType, setAppointmentType] = useState<"in-person" | "video">("in-person");
   const [selectedDepartment, setSelectedDepartment] = useState("");

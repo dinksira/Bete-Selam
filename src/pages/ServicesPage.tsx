@@ -32,7 +32,7 @@ interface ServicesPageProps {
   onBookAppointment: () => void;
 }
 
-export function ServicesPage({ currentLang, onBack, onBookAppointment }: ServicesPageProps) {
+export default function ServicesPage({ currentLang, onBack, onBookAppointment }: ServicesPageProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 

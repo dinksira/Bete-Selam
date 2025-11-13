@@ -18,7 +18,7 @@ interface ContactPageProps {
   onBack: () => void;
 }
 
-export function ContactPage({ currentLang, onBack }: ContactPageProps) {
+export default function ContactPage({ currentLang, onBack }: ContactPageProps) {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
