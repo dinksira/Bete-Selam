@@ -2,13 +2,14 @@
 "use client";
 
 import { useState } from "react";
-import { HomePage } from "../pages/HomePage";
-import { ServicesPage } from "../pages/ServicesPage";
-import { FindDoctorPage } from "../pages/FindDoctorPage";
-import { EmergencyPage } from "../pages/EmergencyPage";
-import { AboutPage } from "../pages/AboutPage";
-import { ContactPage } from "../pages/ContactPage";
-import { BookAppointmentPage } from "../pages/BookAppointmentPage";
+// Change from named imports to default imports
+import HomePage from "../pages/HomePage";
+import ServicesPage from "../pages/ServicesPage";
+import FindDoctorPage from "../pages/FindDoctorPage";
+import EmergencyPage from "../pages/EmergencyPage";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
+import BookAppointmentPage from "../pages/BookAppointmentPage";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
@@ -38,7 +39,7 @@ export default function Home() {
         return (
           <HomePage 
             currentLang={currentLang}
-            onFindDoctor={() => setCurrentPage("find-doctor")} // FIXED: Now goes to find-doctor
+            onFindDoctor={() => setCurrentPage("find-doctor")}
             onBookAppointment={() => setCurrentPage("book-appointment")}
           />
         );
@@ -89,7 +90,7 @@ export default function Home() {
         return (
           <HomePage 
             currentLang={currentLang}
-            onFindDoctor={() => setCurrentPage("find-doctor")} // FIXED: Now goes to find-doctor
+            onFindDoctor={() => setCurrentPage("find-doctor")}
             onBookAppointment={() => setCurrentPage("book-appointment")}
           />
         );
