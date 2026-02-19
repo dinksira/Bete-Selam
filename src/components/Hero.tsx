@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, Video, MapPin, AlertCircle } from "lucide-react";
+import { Calendar, Video, MapPin, AlertCircle, Clock3, ShieldCheck, Star } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./ImageWithFallback";
 
@@ -15,26 +15,48 @@ export function Hero({ currentLang, onFindDoctor, onBookAppointment }: HeroProps
     {
       icon: AlertCircle,
       label: currentLang === "en" ? "Emergency" : "ድንገተኛ",
+      description: currentLang === "en" ? "Immediate 24/7 support" : "24/7 ፈጣን እገዛ",
       color: "bg-red-500",
       href: "#emergency",
     },
     {
       icon: Calendar,
       label: currentLang === "en" ? "Book Appointment" : "ቀጠሮ ያስይዙ",
+      description: currentLang === "en" ? "Pick your preferred time" : "የሚመችዎን ጊዜ ይምረጡ",
       color: "bg-primary",
       href: "#appointment",
     },
     {
       icon: Video,
       label: currentLang === "en" ? "Telemedicine" : "የቴሌሜዲሲን",
+      description: currentLang === "en" ? "Consult from anywhere" : "ከየትም ቦታ ያማክሩ",
       color: "bg-secondary",
       href: "#telemedicine",
     },
     {
       icon: MapPin,
       label: currentLang === "en" ? "Locations" : "አድራሻዎች",
+      description: currentLang === "en" ? "Visit nearby branches" : "ቅርብ ቅርንጫፎችን ይጎብኙ",
       color: "bg-gray-700",
       href: "#locations",
+    },
+  ];
+
+  const trustHighlights = [
+    {
+      icon: Clock3,
+      value: "24/7",
+      label: currentLang === "en" ? "Emergency Response" : "የድንገተኛ ምላሽ",
+    },
+    {
+      icon: ShieldCheck,
+      value: "98%",
+      label: currentLang === "en" ? "Patient Satisfaction" : "የታካሚ እርካታ",
+    },
+    {
+      icon: Star,
+      value: "4.9/5",
+      label: currentLang === "en" ? "Care Experience" : "የእንክብካቤ ልምድ",
     },
   ];
 
@@ -94,6 +116,18 @@ export function Hero({ currentLang, onFindDoctor, onBookAppointment }: HeroProps
                 {currentLang === "en" ? "Find a Doctor" : "ሐኪም ፈልግ"}
               </Button>
             </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
+              {trustHighlights.map((item, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/15">
+                  <div className="flex items-center gap-2 mb-1">
+                    <item.icon className="w-4 h-4 text-secondary" />
+                    <span className="font-semibold text-lg">{item.value}</span>
+                  </div>
+                  <p className={`text-sm text-white/85 ${currentLang === "am" ? "amharic" : ""}`}>{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Right Column - Image */}
@@ -134,14 +168,19 @@ export function Hero({ currentLang, onFindDoctor, onBookAppointment }: HeroProps
                 <a
                   key={index}
                   href={action.href}
-                  className="flex items-center gap-3 p-4 rounded-xl hover:bg-gray-50 transition-all duration-300 group"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-transparent hover:bg-gray-50 hover:border-gray-100 transition-all duration-300 group"
                 >
                   <div className={`${action.color} w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <action.icon className="w-6 h-6 text-white" />
                   </div>
-                  <span className={`text-gray-800 font-medium ${currentLang === "am" ? "amharic" : ""}`}>
-                    {action.label}
-                  </span>
+                  <div>
+                    <span className={`text-gray-800 font-semibold block leading-tight ${currentLang === "am" ? "amharic" : ""}`}>
+                      {action.label}
+                    </span>
+                    <span className={`text-xs text-gray-500 ${currentLang === "am" ? "amharic" : ""}`}>
+                      {action.description}
+                    </span>
+                  </div>
                 </a>
               ))}
             </div>
